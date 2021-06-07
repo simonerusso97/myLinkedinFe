@@ -30,24 +30,24 @@
       <ul class="navbar-nav me-auto mb-2 mb-lg-0">
 
         <li class="nav-item">
-          <a class="nav-link active fw-bold" (click)="goTo('/admin/registrationRequest')"
+          <a  class="nav-link active fw-bold" (click)="goTo('/admin/registrationRequest')"
              [ngClass]="{'active fw-bold': (selected == '0')}">Richieste di registrazione</a>
         </li>
 
-        <li class="nav-item">
-          <a class="nav-link" [ngClass]="{'active fw-bold': (selected == '1')}" (click)="goTo('/admin/banUser')">Ban utenti</a>
+        <li  class="nav-item">
+          <a  class="nav-link" [ngClass]="{'active fw-bold': (selected == '1')}" (click)="goTo('/admin/banUser')">Ban utenti</a>
         </li>
 
         <li class="nav-item">
-          <a class="nav-link" href="#">Gestione post</a>
+          <a class="nav-link" [ngClass]="{'active fw-bold': (selected == '2')}">Gestione post</a>
         </li>
 
         <li class="nav-item">
-          <a class="nav-link" href="#">Gestione strutture</a>
+          <a class="nav-link" [ngClass]="{'active fw-bold': (selected == '3')}">Gestione strutture</a>
         </li>
 
         <li class="nav-item">
-          <a class="nav-link" href="#">Gestione attributi</a>
+          <a class="nav-link" [ngClass]="{'active fw-bold': (selected == '4')}" (click)="goTo('/admin/manageAttribute')"   >Gestione attributi</a>
         </li>
 
 

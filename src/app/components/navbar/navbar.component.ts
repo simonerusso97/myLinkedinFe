@@ -26,6 +26,9 @@ export class NavbarComponent implements OnInit {
     if (path === '/admin/banUser'){
       localStorage.setItem('selected', '1');
     }
+    if (path === '/admin/manageAttribute'){
+      localStorage.setItem('selected', '4');
+    }
     this.route.navigateByUrl(path);
 
   }

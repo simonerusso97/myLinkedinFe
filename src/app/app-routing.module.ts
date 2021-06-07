@@ -2,6 +2,8 @@ import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import {RegistrationRequestComponent} from './components/registration-request/registration-request.component';
 import {BanUserComponent} from './components/ban-user/ban-user.component';
+import {ManageAttributeComponent} from './components/manage-attribute/manage-attribute.component';
+import {CreateAttributeComponent} from './components/create-attribute/create-attribute.component';
 
 const routes: Routes = [
   {
@@ -11,6 +13,14 @@ const routes: Routes = [
   {
     path: 'admin/banUser',
     component: BanUserComponent
+  },
+  {
+    path: 'admin/manageAttribute',
+    component: ManageAttributeComponent
+  },
+  {
+    path: 'admin/createAttribute',
+    component: CreateAttributeComponent
   },
   {
     path: '',

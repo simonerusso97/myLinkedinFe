@@ -4,5 +4,6 @@ export interface Attribute {
   id: number;
   name: string;
   type: string;
-  structureList: Structure[];
+  structureList?: Structure[];
+  isModifing: boolean;
 }
