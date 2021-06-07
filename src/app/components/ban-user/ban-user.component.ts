@@ -50,13 +50,10 @@ export class BanUserComponent implements OnInit {
   }
 
   banUnban(user: Regular): void {
-    // TODO: IMPLEMENTARE CONNESSIONE AL BACKEND, IL METODO DI BACKEND RITORNA UN ARRAY DI UTENTI AGGIORNATO
-     this.userService.banUnban(user).subscribe(data => {
+    this.userService.banUnban(user).subscribe(data => {
        this.userList = this.userList.filter(item => item.id !== user.id);
        this.showingUserList = this.userList;
-     });
-
-
+    });
   }
 
   searchUser(value: string): void{

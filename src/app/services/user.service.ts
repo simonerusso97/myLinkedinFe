@@ -36,4 +36,5 @@ export class UserService {
     user.banned = !user.banned;
     return this.http.post<Regular>('http://localhost:8080/user/banUnbanRegularUser', user, this.httpOptions);
   }
+
 }

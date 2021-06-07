@@ -16,7 +16,7 @@ export class RegistrationRequestComponent implements OnInit {
   @ViewChild('searchUserForm') searchUserForm: any;
 
   ngOnInit(): void {
-    this.userService.getUsers().subscribe(data => {
+    this.userService.getAllDisabledRegularUser().subscribe(data => {
       this.userList = data;
       this.showingUserList = data;
     });
