@@ -32,7 +32,7 @@ export class LoginComponent implements OnInit {
         else {
           sessionStorage.setItem('selected', '0');
           sessionStorage.setItem('admin', JSON.stringify(response));
-          this.routes.navigateByUrl('/login');
+          this.routes.navigateByUrl('/registrationRequest');
         }
       },
       error => {

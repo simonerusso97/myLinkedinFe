@@ -17,6 +17,6 @@ export class UserService {
   constructor(private http: HttpClient) { }
 
   login(admin: Admin): Observable<User> {
-    return this.http.post<Admin>('http://localhost:8080/user/login', admin, this.httpOptions);
+    return this.http.get<Admin>('http://localhost:8080/user/login/' + admin.email + '/' + admin.password);
   }
 }
