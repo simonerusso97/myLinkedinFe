@@ -1,1 +1,34 @@
-<app-navbar></app-navbar>
+<header>
+  <app-navbar></app-navbar>
+</header>
+
+
+<div class="card">
+  <nav class="navbar navbar-light bg-light w-auto p-4">
+    <div class="container-fluid position-relative">
+      <form class="d-flex position-absolute end-0" (ngSubmit)="searchUser(userToSearch.value)">
+        <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search"
+               #userToSearch>
+        <button class="btn btn-outline-success" type="submit">Search</button>
+      </form>
+    </div>
+  </nav>
+</div>
+
+
+<div class="card-group m-3">
+  <div *ngFor="let item of showingUserList;" class="m-4">
+    <div class="card">
+      <div class="card-body" >
+        <h5 class="card-title">{{item.name.toUpperCase()}} {{item.surname.toUpperCase()}}</h5>
+        <ul>
+          <li>Email: {{item.email}}</li>
+          <li>Data di nascita: {{item.birthDay}}</li>
+          <li>Indirizzo: {{item.address}}</li>
+          <li>Titolo di studio: {{item.degree}}</li>
+        </ul>
+        <button type="button"  (click)="acceptUser(item)" class="btn btn-success m-2">Accetta</button>
+      </div>
+    </div>
+  </div>
+</div>

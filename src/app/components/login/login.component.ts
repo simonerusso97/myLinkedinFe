@@ -1,8 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import {User} from '../../model/user';
-import {UserService} from "../../services/user.service";
-import {Router} from "@angular/router";
-import {Admin} from "../../model/admin";
+import {UserService} from '../../services/user.service';
+import {Router} from '@angular/router';
+import {Admin} from '../../model/admin';
 
 @Component({
   selector: 'app-login',
@@ -33,6 +33,7 @@ export class LoginComponent implements OnInit {
           sessionStorage.setItem('selected', '0');
           sessionStorage.setItem('admin', JSON.stringify(response));
           this.routes.navigateByUrl('/registrationRequest');
+
         }
       },
       error => {
