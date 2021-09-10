@@ -9,6 +9,8 @@ import {FormsModule} from '@angular/forms';
 import {HttpClientModule} from '@angular/common/http';
 import { RegistrationRequestComponent } from './components/registration-request/registration-request.component';
 import { NavbarComponent } from './components/navbar/navbar.component';
+import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
+import {ToastrModule} from 'ngx-toastr';
 
 @NgModule({
   declarations: [
@@ -23,7 +25,8 @@ import { NavbarComponent } from './components/navbar/navbar.component';
     RouterModule,
     FormsModule,
     HttpClientModule,
-
+    BrowserAnimationsModule, // required animations module
+    ToastrModule.forRoot(), // ToastrModule added
 
   ],
   providers: [],
