@@ -11,6 +11,7 @@ import { RegistrationRequestComponent } from './components/registration-request/
 import { NavbarComponent } from './components/navbar/navbar.component';
 import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
 import {ToastrModule} from 'ngx-toastr';
+import { BanUserComponent } from './components/ban-user/ban-user.component';
 
 @NgModule({
   declarations: [
@@ -18,6 +19,7 @@ import {ToastrModule} from 'ngx-toastr';
     LoginComponent,
     RegistrationRequestComponent,
     NavbarComponent,
+    BanUserComponent,
   ],
   imports: [
     BrowserModule,

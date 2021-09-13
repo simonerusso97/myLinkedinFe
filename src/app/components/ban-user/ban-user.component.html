@@ -1,0 +1,47 @@
+<header>
+  <app-navbar></app-navbar>
+</header>
+
+<div class="card">
+  <nav class="navbar navbar-light bg-light">
+    <div class="container-fluid">
+      <div class="m-3">
+        Mostra:
+        <div class="form-check form-check-inline">
+          <input class="form-check-input" type="radio" name="inlineRadioOptions" id="allUsersRadio" (click)="changeList('allUsersRadio',userToSearch)" value="All" checked>
+          <label class="form-check-label" for="allUsersRadio" >Tutti</label>
+        </div>
+        <div class="form-check form-check-inline">
+          <input class="form-check-input" type="radio" name="inlineRadioOptions" id="bannedUsersRadio" (click)="changeList('bannedUsersRadio',userToSearch)" value="Banned">
+          <label class="form-check-label" for="bannedUsersRadio">Utenti bloccati</label>
+        </div>
+        <div class="form-check form-check-inline">
+          <input class="form-check-input" type="radio" name="inlineRadioOptions" id="notBannedUsersRadio" (click)="changeList('notBannedUsersRadio', userToSearch)" value="NotBanned">
+          <label class="form-check-label" for="notBannedUsersRadio">Utenti non bloccati</label>
+        </div>
+      </div>
+      <form class="d-flex" (ngSubmit)="searchUser(userToSearch.value)">
+        <input class="form-control me-2"  type="search" placeholder="Search" aria-label="Search" #userToSearch>
+        <button class="btn btn-outline-success" type="submit">Search</button>
+      </form>
+    </div>
+  </nav>
+</div>
+
+<div class="card-group m-3">
+  <div *ngFor="let item of showingUserList;" class="m-4">
+    <div class="card">
+      <div class="card-body" >
+        <h5 class="card-title">{{item.name.toUpperCase()}} {{item.surname.toUpperCase()}}</h5>
+        <ul>
+          <li>Email: {{item.email}}</li>
+          <li>Data di nascita: {{item.birthDay}}</li>
+          <li>Indirizzo: {{item.address}}</li>
+          <li>Titolo di studio: {{item.degree}}</li>
+        </ul>
+        <button *ngIf="item.banned" type="button" class="btn btn-success m-2" (click)="banUnban(item)">Sblocca</button>
+        <button *ngIf="!item.banned" type="button" class="btn btn-danger m-2" (click)="banUnban(item)">Blocca</button>
+      </div>
+    </div>
+  </div>
+</div>

@@ -17,6 +17,7 @@ export class RegistrationRequestComponent implements OnInit {
   constructor(private userService: UserService, private routes: Router, private toastr: ToastrService) { }
 
   ngOnInit(): void {
+    sessionStorage.setItem('selected', '0');
     if (sessionStorage.getItem('admin') === null){
       this.routes.navigateByUrl('/login');
     }

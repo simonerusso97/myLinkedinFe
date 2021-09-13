@@ -28,4 +28,12 @@ export class UserService {
   acceptUsers(user: Regular): Observable<Regular[]> {
     return this.http.patch<Regular[]>('http://localhost:8080/user/acceptUser', user);
   }
+
+  getUsers(): Observable<Regular[]> {
+    return this.http.get<Regular[]>('http://localhost:8080/user/getAllUser');
+  }
+
+  banUnban(user: Regular): Observable<Regular>{
+    return this.http.patch<Regular>('http://localhost:8080/user/banUnban', user);
+  }
 }
