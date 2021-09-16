@@ -30,7 +30,7 @@ export class BanUserComponent implements OnInit {
           this.userListRadio = response;
         },
         error => {
-          this.toastr.error('Si è verificato un errore. Prova a ricaricare la pagina');
+          this.toastr.error('Si è verificato un errore. Prova a ricaricare la pagina\n' + error);
         });
     }
   }

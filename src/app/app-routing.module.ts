@@ -3,6 +3,7 @@ import { RouterModule, Routes } from '@angular/router';
 import {LoginComponent} from './components/login/login.component';
 import {RegistrationRequestComponent} from './components/registration-request/registration-request.component';
 import {BanUserComponent} from './components/ban-user/ban-user.component';
+import {PostVisibilityComponent} from "./components/post-visibility/post-visibility.component";
 
 const routes: Routes = [
   {
@@ -16,6 +17,10 @@ const routes: Routes = [
   {
     path: 'banUser',
     component: BanUserComponent
+  },
+  {
+    path: 'postVisibility',
+    component: PostVisibilityComponent
   },
   {
     path: '',
