@@ -13,6 +13,8 @@ import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
 import {ToastrModule} from 'ngx-toastr';
 import { BanUserComponent } from './components/ban-user/ban-user.component';
 import { PostVisibilityComponent } from './components/post-visibility/post-visibility.component';
+import { ManageAttributeComponent } from './components/attribute/manage-attribute/manage-attribute.component';
+import { DetailAttributeComponent } from './components/attribute/detail-attribute/detail-attribute.component';
 
 @NgModule({
   declarations: [
@@ -22,6 +24,8 @@ import { PostVisibilityComponent } from './components/post-visibility/post-visib
     NavbarComponent,
     BanUserComponent,
     PostVisibilityComponent,
+    ManageAttributeComponent,
+    DetailAttributeComponent,
   ],
   imports: [
     BrowserModule,
