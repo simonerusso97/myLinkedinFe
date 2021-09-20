@@ -51,12 +51,12 @@ export class RegistrationRequestComponent implements OnInit {
   acceptUser(user: Regular): void {
     user.disabled = false;
     this.userService.acceptUsers(user).subscribe(
-      response => {
+      () => {
         this.userList = this.userList.filter(item => item.id !== user.id);
         this.showingUserList = this.userList;
         this.toastr.success('OPERAZIONE COMPLETATA');
       },
-      error => {
+      () => {
         user.disabled = true;
         this.toastr.error('OPERAZIONE FALLITA');
       });

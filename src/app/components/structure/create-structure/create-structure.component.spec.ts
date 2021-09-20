@@ -1,20 +1,20 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { DetailAttributeComponent } from './detail-attribute.component';
+import { CreateStructureComponent } from './create-structure.component';
 
-describe('DetailAttributeComponent', () => {
-  let component: DetailAttributeComponent;
-  let fixture: ComponentFixture<DetailAttributeComponent>;
+describe('CreateStructureComponent', () => {
+  let component: CreateStructureComponent;
+  let fixture: ComponentFixture<CreateStructureComponent>;
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      declarations: [ DetailAttributeComponent ]
+      declarations: [ CreateStructureComponent ]
     })
     .compileComponents();
   });
 
   beforeEach(() => {
-    fixture = TestBed.createComponent(DetailAttributeComponent);
+    fixture = TestBed.createComponent(CreateStructureComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });

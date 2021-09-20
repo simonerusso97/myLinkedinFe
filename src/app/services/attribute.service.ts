@@ -26,4 +26,8 @@ export class AttributeService {
   updateAttribute(attribute: Attribute): Observable<Attribute> {
     return this.http.patch<Attribute>('http://localhost:8080/attribute/updateAttribute', attribute);
   }
+
+  createAttribute(attribute: Attribute): Observable<Attribute> {
+    return this.http.post<Attribute>('http://localhost:8080/attribute/createAttribute', attribute, this.httpOptions);
+  }
 }

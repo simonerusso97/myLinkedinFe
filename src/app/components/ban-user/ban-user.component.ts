@@ -65,10 +65,10 @@ export class BanUserComponent implements OnInit {
   banUnban(user: Regular): void {
     user.banned = !user.banned;
     this.userService.banUnban(user).subscribe(
-      response => {
+      () => {
         this.toastr.success('Operazione completata');
       },
-      error => {
+      () => {
         this.toastr.error('Operazione fallita');
         user.banned = !user.banned;
 

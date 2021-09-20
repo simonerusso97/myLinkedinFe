@@ -67,7 +67,7 @@ export class ManageAttributeComponent implements OnInit {
     attribute.name = attributeName;
     attribute.type = attributeType;
     this.attributeService.updateAttribute(attribute).subscribe(
-      response => {
+      () => {
         console.log(this.attributeList);
         this.showingAttributeList = this.attributeList;
         attribute.success = true;
@@ -88,7 +88,7 @@ export class ManageAttributeComponent implements OnInit {
 
   delete(attribute: Attribute): void {
     this.attributeService.delete(attribute).subscribe(
-      response => {
+      () => {
         this.attributeList = this.attributeList.filter(item => item.id !== attribute.id);
         this.showingAttributeList = this.attributeList;
       },

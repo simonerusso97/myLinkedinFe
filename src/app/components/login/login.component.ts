@@ -1,5 +1,4 @@
 import { Component, OnInit } from '@angular/core';
-import {User} from '../../model/user';
 import {UserService} from '../../services/user.service';
 import {Router} from '@angular/router';
 import {Admin} from '../../model/admin';
@@ -36,7 +35,7 @@ export class LoginComponent implements OnInit {
 
         }
       },
-      error => {
+      () => {
         this.credErr = true;
       });
   }

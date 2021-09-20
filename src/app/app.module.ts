@@ -5,7 +5,7 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { LoginComponent } from './components/login/login.component';
 import {RouterModule} from '@angular/router';
-import {FormsModule} from '@angular/forms';
+import {FormsModule, ReactiveFormsModule} from '@angular/forms';
 import {HttpClientModule} from '@angular/common/http';
 import { RegistrationRequestComponent } from './components/registration-request/registration-request.component';
 import { NavbarComponent } from './components/navbar/navbar.component';
@@ -14,7 +14,9 @@ import {ToastrModule} from 'ngx-toastr';
 import { BanUserComponent } from './components/ban-user/ban-user.component';
 import { PostVisibilityComponent } from './components/post-visibility/post-visibility.component';
 import { ManageAttributeComponent } from './components/attribute/manage-attribute/manage-attribute.component';
-import { DetailAttributeComponent } from './components/attribute/detail-attribute/detail-attribute.component';
+import { CreateAttributeComponent } from './components/attribute/create-attribute/create-attribute.component';
+import { ManageStructureComponent } from './components/structure/manage-structure/manage-structure.component';
+import { CreateStructureComponent } from './components/structure/create-structure/create-structure.component';
 
 @NgModule({
   declarations: [
@@ -25,7 +27,9 @@ import { DetailAttributeComponent } from './components/attribute/detail-attribut
     BanUserComponent,
     PostVisibilityComponent,
     ManageAttributeComponent,
-    DetailAttributeComponent,
+    CreateAttributeComponent,
+    ManageStructureComponent,
+    CreateStructureComponent,
   ],
   imports: [
     BrowserModule,
@@ -34,7 +38,9 @@ import { DetailAttributeComponent } from './components/attribute/detail-attribut
     FormsModule,
     HttpClientModule,
     BrowserAnimationsModule, // required animations module
-    ToastrModule.forRoot(), // ToastrModule added
+    ToastrModule.forRoot(),
+    ReactiveFormsModule,
+    // ToastrModule added
 
   ],
   providers: [],

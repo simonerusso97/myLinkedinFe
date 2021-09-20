@@ -5,6 +5,7 @@ import {RegistrationRequestComponent} from './components/registration-request/re
 import {BanUserComponent} from './components/ban-user/ban-user.component';
 import {PostVisibilityComponent} from "./components/post-visibility/post-visibility.component";
 import {ManageAttributeComponent} from "./components/attribute/manage-attribute/manage-attribute.component";
+import {CreateAttributeComponent} from "./components/attribute/create-attribute/create-attribute.component";
 
 const routes: Routes = [
   {
@@ -22,6 +23,10 @@ const routes: Routes = [
   {
     path: 'manageAttribute',
     component: ManageAttributeComponent
+  },
+  {
+    path: 'createAttribute',
+    component: CreateAttributeComponent
   },
   {
     path: 'postVisibility',
