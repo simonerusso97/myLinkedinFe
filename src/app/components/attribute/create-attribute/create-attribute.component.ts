@@ -13,6 +13,7 @@ export class CreateAttributeComponent implements OnInit {
 
   attribute: Attribute = {} as Attribute;
   err = false;
+  success = false;
   selectList: string[] = ['String', 'Number', 'Position', 'Image', 'PDF'];
 
   submit = false;
@@ -20,16 +21,13 @@ export class CreateAttributeComponent implements OnInit {
   validationMessages = {
     name: [
       {type: 'required', message: 'Non può essere vuoto'}
-    ],
-    type: [
-      {type: 'required', message: 'Non può essere vuoto'}
     ]
   };
 
   constructor(private attributeService: AttributeService, private route: Router, public formBuilder: FormBuilder) {
     this.attributeForm = new FormGroup({
       name: new FormControl('', Validators.required),
-      type: new FormControl(null, Validators.required),
+      type: new FormControl(),
     });
   }
 
@@ -46,22 +44,24 @@ export class CreateAttributeComponent implements OnInit {
     if (this.attributeForm.valid){
       this.attribute.name = this.attributeForm.value.name;
       this.attribute.type = this.attributeForm.value.type;
-      this.attribute.deletable = false;
+      this.attribute.deletable = true;
       this.attributeService.createAttribute(this.attribute).subscribe(
         () => {
-          this.attributeForm.reset();
+          this.attributeForm.patchValue({name: ''});
           this.err = false;
           this.submit = false;
+          this.success = true;
         },
         () => {
           this.err = true;
+          this.success = false;
         }
       );
     }
   }
 
   goTo(): void {
-    this.route.navigateByUrl('admin/manageAttribute');
+    this.route.navigateByUrl('manageAttribute');
   }
 
 }

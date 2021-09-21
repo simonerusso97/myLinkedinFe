@@ -6,6 +6,8 @@ import {BanUserComponent} from './components/ban-user/ban-user.component';
 import {PostVisibilityComponent} from "./components/post-visibility/post-visibility.component";
 import {ManageAttributeComponent} from "./components/attribute/manage-attribute/manage-attribute.component";
 import {CreateAttributeComponent} from "./components/attribute/create-attribute/create-attribute.component";
+import {ManageStructureComponent} from "./components/structure/manage-structure/manage-structure.component";
+import {CreateStructureComponent} from "./components/structure/create-structure/create-structure.component";
 
 const routes: Routes = [
   {
@@ -27,6 +29,14 @@ const routes: Routes = [
   {
     path: 'createAttribute',
     component: CreateAttributeComponent
+  },
+  {
+    path: 'manageStructure',
+    component: ManageStructureComponent
+  },
+  {
+    path: 'createStructure',
+    component: CreateStructureComponent
   },
   {
     path: 'postVisibility',

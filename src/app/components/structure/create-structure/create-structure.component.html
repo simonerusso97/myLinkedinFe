@@ -1,1 +1,93 @@
-<p>create-structure works!</p>
+<header>
+  <app-navbar></app-navbar>
+</header>
+
+<div class="card mx-auto m-3" style="width: 40rem;">
+  <form #form="ngForm" class="m-4" novalidate>
+
+    <div class="alert alert-success d-flex align-items-center m-3" role="alert" *ngIf="success.value">
+      <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="currentColor" class="bi bi-exclamation-triangle-fill flex-shrink-0 me-2" viewBox="0 0 16 16" role="img" aria-label="Warning:">
+        <path d="M8.982 1.566a1.13 1.13 0 0 0-1.96 0L.165 13.233c-.457.778.091 1.767.98 1.767h13.713c.889 0 1.438-.99.98-1.767L8.982 1.566zM8 5c.535 0 .954.462.9.995l-.35 3.507a.552.552 0 0 1-1.1 0L7.1 5.995A.905.905 0 0 1 8 5zm.002 6a1 1 0 1 1 0 2 1 1 0 0 1 0-2z"/>
+      </svg>
+      <div>
+        {{success.message}}
+      </div>
+    </div>
+
+    <div class="alert alert-danger d-flex align-items-center m-3" role="alert" *ngIf="error.value">
+      <svg xmlns="http://www.w3.org/2000/svg" class="bi bi-exclamation-triangle-fill flex-shrink-0 me-2" width="24" height="24" role="img" fill="currentColor" viewBox="0 0 16 16" aria-label="Danger:"><use xlink:href="#exclamation-triangle-fill"/>
+        <path d="M8.982 1.566a1.13 1.13 0 0 0-1.96 0L.165 13.233c-.457.778.091 1.767.98 1.767h13.713c.889 0 1.438-.99.98-1.767L8.982 1.566zM8 5c.535 0 .954.462.9.995l-.35 3.507a.552.552 0 0 1-1.1 0L7.1 5.995A.905.905 0 0 1 8 5zm.002 6a1 1 0 1 1 0 2 1 1 0 0 1 0-2z"/>
+      </svg>
+      <div>
+        {{error.message}}
+      </div>
+    </div>
+
+    <div class="form-check form-check-inline ms-2">
+      <input class="form-check-input" type="checkbox" id="offerorCheck" value="Offeror"
+             [(ngModel)]="check[0]"
+             name="check[0]"
+      >
+      <label class="form-check-label" for="offerorCheck">Offeror</label>
+    </div>
+
+    <div class="form-check form-check-inline">
+      <input class="form-check-input" type="checkbox" id="applicantCheck" value="Applicant"
+             [(ngModel)]="check[1]"
+             name="check[1]"
+      >
+      <label class="form-check-label" for="applicantCheck">Applicant</label>
+    </div>
+
+    <div class="alert alert-danger d-flex align-items-center m-3" role="alert" *ngIf="errCheck.value">
+      <svg xmlns="http://www.w3.org/2000/svg" class="bi bi-exclamation-triangle-fill flex-shrink-0 me-2" width="24" height="24" role="img" fill="currentColor" viewBox="0 0 16 16" aria-label="Danger:"><use xlink:href="#exclamation-triangle-fill"/>
+        <path d="M8.982 1.566a1.13 1.13 0 0 0-1.96 0L.165 13.233c-.457.778.091 1.767.98 1.767h13.713c.889 0 1.438-.99.98-1.767L8.982 1.566zM8 5c.535 0 .954.462.9.995l-.35 3.507a.552.552 0 0 1-1.1 0L7.1 5.995A.905.905 0 0 1 8 5zm.002 6a1 1 0 1 1 0 2 1 1 0 0 1 0-2z"/>
+      </svg>
+      <div>
+        {{errCheck.message}}
+      </div>
+    </div>
+
+    <div class="mb-3">
+      <label for="structureName" class="form-label">Nome struttura</label>
+      <input type="text" class="form-control" id="structureName" aria-describedby="name"
+             [(ngModel)]="structure.name"
+             name="name"
+             required="true">
+    </div>
+
+    <div class="mb-3">
+      <label for="structureDescription" class="form-label">Descrizione</label>
+      <input type="text" class="form-control" id="structureDescription"
+             [(ngModel)]="structure.description"
+             name="description"
+             required="true">
+    </div>
+
+    <button type="submit" class="btn btn-dark mb-3" [disabled]="!form.form.valid" (click)="saveStructure()" *ngIf="create">Crea Nuova struttura</button>
+    <button type="submit" class="btn btn-dark mb-3" [disabled]="!form.form.valid" (click)="saveStructure()" *ngIf="!create">Salva Modifiche</button>
+    <button type="submit" class="btn btn-dark mb-3 ms-2" (click)="goBack()">Indietro</button>
+
+    <select class="form-select mb-3" aria-label="Default select example" style="margin-bottom:12px" (change)="this.button = true;" #select>
+      <option selected >------Attributi-------</option>
+      <option value="{{myindex}}" *ngFor="let item of selectAttributeList; let myindex=index">{{item.name}}
+      </option>
+    </select>
+
+    <button type="button" class="btn btn-dark mb-3" [disabled]="!button" (click)="addAttribute(select.value)">Aggiungi attributo</button>
+
+    <div ><h3>Attributi:</h3>
+      <div class="card-group m-3">
+        <div *ngFor="let item of attributeList; let myIndex = index">
+          <div class="card m-3">
+            <div class="card-body" >
+              Nome: {{item.name}}<br>
+              Tipo: {{item.type}}<br>
+              <button type="button" class="btn btn-dark mb-3" [disabled]="item.deletable" (click)="deleteAttribute(myIndex)">Elimina attributo</button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </form>
+</div>

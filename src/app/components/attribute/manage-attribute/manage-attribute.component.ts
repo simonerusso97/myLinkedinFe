@@ -27,7 +27,7 @@ export class ManageAttributeComponent implements OnInit {
 
   ngOnInit(): void {
     if (!sessionStorage.getItem('admin')){
-      this.route.navigateByUrl('/forbidden');
+      this.route.navigateByUrl('/login');
     }
     else {
       sessionStorage.setItem('selected', '4');
@@ -41,7 +41,7 @@ export class ManageAttributeComponent implements OnInit {
   }
 
   goTo(): void {
-    this.route.navigateByUrl('admin/createAttribute');
+    this.route.navigateByUrl('createAttribute');
   }
 
   searchAttribute(value: string): void {

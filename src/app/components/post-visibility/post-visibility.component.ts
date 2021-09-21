@@ -54,7 +54,7 @@ export class PostVisibilityComponent implements OnInit {
   searchPost(value: string): void{
     this.showingPostList = [];
     if (value === ''){
-      this.showingPostList = this.postList;
+      this.showingPostList = this.postRadioList;
     }
     this.postRadioList.forEach(item => {
 

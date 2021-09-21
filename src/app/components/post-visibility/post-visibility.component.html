@@ -10,21 +10,21 @@
         Mostra:
         <div class="form-check form-check-inline">
           <input class="form-check-input" type="radio" name="inlineRadioOptions" id="allPostRadio" value="All" checked
-                 (click)="changeList('allPostRadio', postToSearch)">
+                 (click)="changeList('allPostRadio', postToSearch)" #allPostRadio>
           <label class="form-check-label" for="allPostRadio" >Tutti</label>
         </div>
         <div class="form-check form-check-inline">
           <input class="form-check-input" type="radio" name="inlineRadioOptions" id="notHiddenPostRadio" value="Hide"
-                 (click)="changeList('notHiddenPostRadio', postToSearch)">
+                 (click)="changeList('notHiddenPostRadio', postToSearch)" #notHiddenPostRadio>
           <label class="form-check-label" for="notHiddenPostRadio">Post visibili</label>
         </div>
         <div class="form-check form-check-inline">
           <input class="form-check-input" type="radio" name="inlineRadioOptions" id="hiddenPostRadio"  value="Not Hide"
-                 (click)="changeList('hiddenPostRadio', postToSearch)">
+                 (click)="changeList('hiddenPostRadio', postToSearch)" #hiddenPostRadio>
           <label class="form-check-label" for="hiddenPostRadio">Post nascosti</label>
         </div>
       </div>
-      <form class="d-flex" (submit)="searchPost(postToSearch.value)">
+      <form class="d-flex" (submit)="searchPost(postToSearch.value, allPostRadio, notHiddenPostRadio, hiddenPostRadio)">
         <input class="form-control me-2"  type="search" placeholder="Search" aria-label="Search" #postToSearch>
         <button class="btn btn-outline-success" type="submit">Search</button>
       </form>
