@@ -6,5 +6,5 @@ export interface Structure {
   description: string;
   userType: string;
   attributeList: Attribute[];
-  deletables: boolean[];
+  deletable: boolean;
 }

@@ -44,7 +44,6 @@ export class CreateAttributeComponent implements OnInit {
     if (this.attributeForm.valid){
       this.attribute.name = this.attributeForm.value.name;
       this.attribute.type = this.attributeForm.value.type;
-      this.attribute.deletable = true;
       this.attributeService.createAttribute(this.attribute).subscribe(
         () => {
           this.attributeForm.patchValue({name: ''});

@@ -24,7 +24,7 @@
           <label class="form-check-label" for="hiddenPostRadio">Post nascosti</label>
         </div>
       </div>
-      <form class="d-flex" (submit)="searchPost(postToSearch.value, allPostRadio, notHiddenPostRadio, hiddenPostRadio)">
+      <form class="d-flex" (submit)="searchPost(postToSearch.value)">
         <input class="form-control me-2"  type="search" placeholder="Search" aria-label="Search" #postToSearch>
         <button class="btn btn-outline-success" type="submit">Search</button>
       </form>

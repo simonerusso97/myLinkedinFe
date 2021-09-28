@@ -3,4 +3,5 @@ export interface Company {
   name: string;
   sector: string;
   password: string;
+  description: string;
 }
