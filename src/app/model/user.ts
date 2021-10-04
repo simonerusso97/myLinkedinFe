@@ -1,3 +1,4 @@
+
 export interface User {
   id: number;
   name: string;
@@ -5,6 +6,5 @@ export interface User {
   email: string;
   birthDay: Date;
   password: string;
-  // messageList: Message[];
   type: string;
 }

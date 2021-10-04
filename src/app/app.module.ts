@@ -17,6 +17,7 @@ import { ManageAttributeComponent } from './components/attribute/manage-attribut
 import { CreateAttributeComponent } from './components/attribute/create-attribute/create-attribute.component';
 import { ManageStructureComponent } from './components/structure/manage-structure/manage-structure.component';
 import { CreateStructureComponent } from './components/structure/create-structure/create-structure.component';
+import { ChatComponent } from './components/chat/chat.component';
 
 @NgModule({
   declarations: [
@@ -30,6 +31,7 @@ import { CreateStructureComponent } from './components/structure/create-structur
     CreateAttributeComponent,
     ManageStructureComponent,
     CreateStructureComponent,
+    ChatComponent,
   ],
   imports: [
     BrowserModule,

@@ -18,6 +18,8 @@ export class ManageAttributeComponent implements OnInit {
     this.selectList.push('Position');
     this.selectList.push('Image');
     this.selectList.push('PDF');
+    this.selectList.push('Date');
+
   }
 
   attributeList: Attribute[] = [];

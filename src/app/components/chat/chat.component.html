@@ -1,0 +1,96 @@
+<header>
+  <app-navbar></app-navbar>
+</header>
+<div class="container">
+
+
+  <!-- Content wrapper start -->
+  <div class="content-wrapper">
+
+    <!-- Row start -->
+    <div class="row gutters">
+
+      <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-12">
+
+        <div class="card m-0">
+
+          <!-- Row start -->
+          <div class="row no-gutters">
+            <!--COLONNA DI SINISTRA-->
+            <div class="col-xl-4 col-lg-4 col-md-4 col-sm-3 col-3">
+              <div class="users-container">
+                <div class="chat-search-box">
+                  <div class="input-group">
+                    <!-- qui ci va la (onclick)-->
+                    <form class="d-flex">
+                      <input class="form-control me-2"  type="search" placeholder="Search" aria-label="Search" #userToSearch>
+                      <button class="btn btn-outline-success" type="submit" (click)="searchUser(userToSearch.value)">Search</button>
+                    </form>
+                  </div>
+                </div>
+                <!--LISTA UTENTI-->
+                <ul class="users">
+                  <li class="person" data-chat="person1" *ngFor="let user of showingList" (click)="openChat(user)">
+                    <p class="name-time">
+                      <span class="name">{{user.name +' '+ user.surname + ' (' + user.type + ')'}}</span>
+                    </p>
+                  </li>
+                </ul>
+
+              </div>
+            </div>
+
+            <!--COLONNA DI DESTRA-->
+            <div class="col-xl-8 col-lg-8 col-md-8 col-sm-9 col-9">
+              <div class="selected-user">
+                <!--NOME UTENTE CHAT-->
+                <span>To: <span *ngIf="chat.type!==undefined" class="name">{{chat.name + ' ' + chat.surname + ' (' + chat.type + ')'}}</span></span>
+              </div>
+
+              <!-- CHAT VERA-->
+              <div class="chat-container">
+                <ul class="chat-box chatContainerScroll">
+                  <div *ngFor="let message of messageList">
+                    <li class="chat-left" *ngIf="message.sendingUser.id == chat.id">
+
+                      <div class="chat-text left">{{message.text}}</div>
+                      <div class="chat-hour">{{message.date | date: 'short'}}</div>
+                    </li>
+                    <li class="chat-right" *ngIf="message.receivingUser.id == chat.id">
+                      <div class="chat-hour">{{message.date | date: 'short'}}</div>
+                      <div class="chat-text right">
+                        {{message.text}}
+                      </div>
+                    </li>
+                  </div>
+                </ul>
+                <div class="form-group mt-3 mb-0 me-3">
+                  <div class="alert alert-danger" role="alert" *ngIf="sendError">
+                    Si è verificato un errore durante la consegna.
+                    Riprova
+                  </div>
+                  <textarea class="form-control mb-1" placeholder="Scrivi il tuo messaggio"
+                            [(ngModel)]="message.text"
+                            name="text"
+                  > </textarea>
+                  <button type="button" class="btn btn-info" style="float: right;" (click)="sendMessage()" [disabled]="message.text==''"> Invia messaggio</button>
+                </div>
+                <!--<div class="form-group mt-3 mb-0">
+                  <textarea class="form-control" rows="3" placeholder="Type your message here..."[(ngModel)]="message.text></textarea>
+                  <button type="button" class="btn btn-info" (click)="sendMessage()" [disabled]="message.text==''"> Invia messaggio</button>
+                </div>-->
+              </div>
+            </div>
+          </div>
+          <!-- Row end -->
+        </div>
+
+      </div>
+
+    </div>
+    <!-- Row end -->
+
+  </div>
+  <!-- Content wrapper end -->
+
+</div>

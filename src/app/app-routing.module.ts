@@ -8,6 +8,7 @@ import {ManageAttributeComponent} from "./components/attribute/manage-attribute/
 import {CreateAttributeComponent} from "./components/attribute/create-attribute/create-attribute.component";
 import {ManageStructureComponent} from "./components/structure/manage-structure/manage-structure.component";
 import {CreateStructureComponent} from "./components/structure/create-structure/create-structure.component";
+import {ChatComponent} from "./components/chat/chat.component";
 
 const routes: Routes = [
   {
@@ -41,6 +42,10 @@ const routes: Routes = [
   {
     path: 'postVisibility',
     component: PostVisibilityComponent
+  },
+  {
+    path: 'chat',
+    component: ChatComponent
   },
   {
     path: '',

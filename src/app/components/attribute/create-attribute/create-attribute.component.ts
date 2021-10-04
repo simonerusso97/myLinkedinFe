@@ -14,7 +14,7 @@ export class CreateAttributeComponent implements OnInit {
   attribute: Attribute = {} as Attribute;
   err = false;
   success = false;
-  selectList: string[] = ['String', 'Number', 'Position', 'Image', 'PDF'];
+  selectList: string[] = ['String', 'Number', 'Position', 'Image', 'PDF', 'Date'];
 
   submit = false;
   attributeForm: FormGroup;

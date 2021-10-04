@@ -23,7 +23,7 @@ export class BanUserComponent implements OnInit {
       this.routes.navigateByUrl('/login');
     }
     else{
-      this.userService.getUsers().subscribe(
+      this.userService.getDisabledUsers().subscribe(
         response => {
           this.userList = response;
           this.showingUserList = response;
