@@ -49,4 +49,9 @@ export class UserService {
   getAllUsers() : Observable<User[]> {
     return this.http.get<User[]>('http://localhost:8080/user/getAllUser');
   }
+
+  getAllRegular() : Observable<Regular[]>{
+    return this.http.get<Regular[]>('http://localhost:8080/user/getAllRegular');
+
+  }
 }
